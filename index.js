@@ -20,4 +20,22 @@ document.addEventListener("DOMContentLoaded", () => {
     alert("로그아웃 되었습니다!");
     window.location.href = "index.html";
   });
+  //첫 화면 로드시 방 display 출력
+
+  const startBtn = document.querySelector(".btn-start");
+
+  if (startBtn) {
+    startBtn.addEventListener("click", (e) => {
+      const user = localStorage.getItem("loggedInUser");
+
+      if (!user) {
+        e.preventDefault(); // ❗ 링크 이동 막기 필수!
+        alert("로그인이 필요합니다!");
+        window.location.href = "login.html";
+      } else {
+        // 로그인된 경우는 이동 OK!
+        window.location.href = "rooms.html";
+      }
+    });
+  }
 });
