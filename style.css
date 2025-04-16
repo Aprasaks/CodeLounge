@@ -71,37 +71,34 @@ textarea {
 .hidden {
   display: none;
 }
-/* ========== rooms.html 전용 스타일 ========== */
+/* 전체 감싸기 */
 .rooms-container {
-  max-width: 1100px;
+  max-width: 960px;
   margin: 60px auto;
-  padding: 0 30px;
-}
-
-/* 헤더 제목 */
-.rooms-container h1 {
-  font-size: 2.2rem;
-  margin-bottom: 24px;
-  color: #2c2c2c;
+  padding: 0 20px;
 }
 
 /* 방 생성 영역 */
 .rooms-container .create-room {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
   display: flex;
   gap: 12px;
-  margin-bottom: 28px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  margin-bottom: 30px;
 }
 
 .rooms-container #roomTitleInput {
   flex: 1;
-  padding: 12px;
+  padding: 14px;
   font-size: 1rem;
   border-radius: 10px;
   border: 1px solid #ccc;
 }
 
 .rooms-container #createRoomBtn {
-  padding: 12px 20px;
+  padding: 14px 20px;
   background-color: #5c67f2;
   color: white;
   border: none;
@@ -117,54 +114,45 @@ textarea {
 
 /* 방 리스트 */
 .rooms-container .room-list {
-  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
   padding: 0;
   margin: 0;
+  list-style: none;
 }
 
+/* 방 항목 (카드 스타일) */
 .rooms-container .room-list li {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 20px 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
   display: flex;
   align-items: center;
-  padding: 20px 24px;
-  background: white;
-  border-radius: 12px;
-  margin-bottom: 16px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
-  cursor: pointer;
-  transition: background-color 0.2s ease;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .rooms-container .room-list li:hover {
-  background-color: #eef1ff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  background-color: #f0f3ff;
 }
 
-.rooms-container .room-thumbnail {
-  width: 60px;
-  height: 60px;
-  background-color: #e0e3ff;
-  border-radius: 50%;
-  font-size: 26px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 16px;
+/* 링크 스타일 제거 + 기본 색상 */
+.rooms-container .room-list a {
+  text-decoration: none;
+  color: #2c2c2c;
+  font-weight: 600;
+  font-size: 1.1rem;
 }
 
-.rooms-container .room-info {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.rooms-container .room-title {
-  font-size: 1.3rem;
-  font-weight: bold;
-  margin-bottom: 6px;
-}
-
+/* 서브 텍스트 */
 .rooms-container .room-sub {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #888;
+  margin-top: 4px;
 }
 
 /* index css */

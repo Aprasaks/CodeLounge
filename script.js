@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //방 렌더링(display)
   const renderRooms = () => {
+    const rooms = JSON.parse(localStorage.getItem("codeRooms")) || [];
+
     roomList.innerHTML = "";
     rooms.forEach((room) => {
       const li = document.createElement("li");
@@ -31,18 +33,25 @@ document.addEventListener("DOMContentLoaded", () => {
     const title = titleInput.value.trim();
     if (!title) return alert("방 제목을 지어주세요.");
 
-    //새롭게 생성되는 방의 객체 정보
     const currentUser = localStorage.getItem("loggedInUser");
-
     const newRoom = {
       id: Date.now(),
       title: title,
-      creator: currentUser || "익명", // 진짜 로그인된 사용자 기준
+      creator: currentUser || "익명",
       createdAt: new Date().toLocaleString(),
     };
-    rooms.push(newRoom);
-    localStorage.setItem("codeRooms", JSON.stringify(rooms));
-    titleInput.value = "";
+
+    // 1. 기존 방 목록 불러오기
+    const storedRooms = JSON.parse(localStorage.getItem("codeRooms")) || [];
+
+    // 2. 새 방 추가
+    storedRooms.push(newRoom);
+
+    // 3. localStorage에 저장
+    localStorage.setItem("codeRooms", JSON.stringify(storedRooms));
+
+    // 4. 화면 다시 렌더링
     renderRooms();
+    titleInput.value = "";
   });
 });
