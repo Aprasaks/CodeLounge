@@ -1,56 +1,55 @@
 body {
   font-family: "Pretendard", sans-serif;
-  background-color: #f7f8fa;
+  background-color: #111;
   margin: 0;
   padding: 0;
 }
 
-/* 전체 컨테이너 */
 .rooms-container {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 60px auto;
-  padding: 0 30px;
+  padding: 0 40px;
 }
 
-/* 상단 헤더 스타일 */
-.rooms-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 30px;
-}
-
-.rooms-header .logo {
-  font-weight: bold;
+/* 상단 CodeLounge 박스 */
+.logo-box {
+  background: white;
+  padding: 20px 30px;
   font-size: 2rem;
+  font-weight: bold;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+  display: inline-block;
 }
 
-.rooms-header .logout-btn {
-  padding: 8px 16px;
-  background-color: #444;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-.rooms-header .logout-btn:hover {
-  background-color: #666;
-}
-
-/* 레이아웃: 왼쪽 인풋, 오른쪽 목록 */
+/* 양옆 레이아웃 */
 .rooms-main {
   display: flex;
-  gap: 30px;
+  gap: 40px;
 }
 
-/* 왼쪽 입력 영역 */
-.rooms-main .create-room {
-  flex: 0 0 300px;
+/* 왼쪽 인풋 영역 */
+.create-room-box {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
+  flex: 0 0 320px;
+}
+
+.create-room-box h2 {
+  margin-top: 0;
+}
+
+#roomTitleInput {
+  padding: 14px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
 }
 
 #createRoomBtn {
@@ -61,25 +60,22 @@ body {
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease;
 }
 
 #createRoomBtn:hover {
   background-color: #4b55cc;
 }
 
-#roomTitleInput {
-  padding: 14px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-}
-
-/* 오른쪽 방 목록 */
+/* 오른쪽 목록 영역 */
 .room-list-wrapper {
   flex: 1;
-  max-height: 500px;
+  max-height: 600px;
   overflow-y: auto;
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .room-list {
@@ -92,21 +88,21 @@ body {
 }
 
 .room-list li {
-  background-color: #ffffff;
-  padding: 20px 24px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  background-color: #f1f4ff;
+  padding: 18px 22px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  transition: 0.2s ease;
 }
 
 .room-list li:hover {
-  background-color: #eef1ff;
+  background-color: #e2e8ff;
   transform: translateY(-2px);
 }
 
 .room-list a {
   text-decoration: none;
   color: #2c2c2c;
-  font-size: 1.1rem;
   font-weight: 600;
+  font-size: 1.05rem;
 }

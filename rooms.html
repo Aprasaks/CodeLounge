@@ -8,20 +8,25 @@
   </head>
   <body>
     <div class="rooms-container">
-      <div class="container">
-        <h1>CodeLounge</h1>
-        <h2>코드방 목록</h2>
+      <div class="logo-box">CodeLounge</div>
 
-        <!-- 방 생성 -->
-        <div class="create-romm">
+      <!-- 방 생성 & 목록 영역 -->
+      <div class="rooms-main">
+        <!-- 왼쪽: 방 생성 영역 -->
+        <div class="create-room-box">
+          <h2>코드방 목록</h2>
           <input type="text" id="roomTitleInput" placeholder="방 제목을 지어주세요." />
           <button id="createRoomBtn">방 만들기</button>
         </div>
 
-        <!-- 방 목록 추가 -->
-        <ul id="roomList" class="room-list"></ul>
+        <!-- 오른쪽: 방 리스트 -->
+        <div class="room-list-wrapper">
+          <ul class="room-list" id="roomList"></ul>
+        </div>
       </div>
     </div>
+
+    <!-- 스크립트 -->
     <script src="script.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
