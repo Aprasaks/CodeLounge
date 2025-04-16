@@ -50,17 +50,30 @@ document.addEventListener("DOMContentLoaded", () => {
   // 렌더링 함수
   function updatePreview() {
     const html = htmlInput.value;
-    const css = `<style>${cssInput.value}</style>`;
+
+    const defaultCSS = `
+      body {
+        background-color: #1f1f1f;
+        color: white;
+        font-family: monospace;
+        padding: 20px;
+      }
+    `;
+
+    const css = `<style>${defaultCSS}${cssInput.value}</style>`;
     const js = `<script>${jsInput.value}<\/script>`;
 
-    const fullCode = `<!DOCTYPE html>
-<html>
-<head>${css}</head>
-<body>
-${html}
-${js}
-</body>
-</html>`;
+    const fullCode = `
+      <!DOCTYPE html>
+      <html>
+        <head>${css}</head>
+        <body>
+          ${html}
+          ${js}
+        </body>
+      </html>
+    `;
+
     preview.srcdoc = fullCode;
   }
 
