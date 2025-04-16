@@ -16,3 +16,35 @@ if (targetRoom) {
 } else {
   document.getElementById("roomTitle").textContent = "방이 존재하지않습니다.";
 }
+
+// 코드 input
+document.addEventListener("DOMContentLoaded", () => {
+  const htmlInput = document.getElementById("htmlCode");
+  const cssInput = document.getElementById("cssCode");
+  const jsInput = document.getElementById("jsCode");
+  const preview = document.getElementById("preview");
+
+  // rendering
+  function updatePreview() {
+    const html = htmlInput.value;
+    const css = `<style>${cssInput.value}</style>`;
+    const js = `<script>${jsInput.value}<\/script>`;
+
+    const fullCode = `<!DOCTYPE html>
+  <html>
+  <head>${css}</head>
+  <body>
+  ${html}
+  ${js}
+  </body>
+  </html>`;
+    preview.srcdoc = fullCode;
+  }
+
+  // input change rendering
+  htmlInput.addEventListener("input", updatePreview);
+  cssInput.addEventListener("input", updatePreview);
+  jsInput.addEventListener("input", updatePreview);
+
+  updatePreview(); // 처음 로딩될 때도 미리보기 보여주기
+});
