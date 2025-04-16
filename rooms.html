@@ -23,5 +23,14 @@
       </div>
     </div>
     <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const user = localStorage.getItem("loggedInUser");
+        if (!user) {
+          alert("로그인이 필요한 페이지입니다.");
+          window.location.href = "login.html";
+        }
+      });
+    </script>
   </body>
 </html>
