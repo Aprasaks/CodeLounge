@@ -1,3 +1,10 @@
+body {
+  font-family: "Pretendard", sans-serif;
+  background-color: #f7f8fa;
+  margin: 0;
+  padding: 0;
+}
+
 .create-room {
   margin-bottom: 20px;
   display: flex;
@@ -63,4 +70,99 @@ textarea {
 
 .hidden {
   display: none;
+}
+/* ========== rooms.html 전용 스타일 ========== */
+.rooms-container {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 30px;
+}
+
+/* 헤더 제목 */
+.rooms-container h1 {
+  font-size: 2.2rem;
+  margin-bottom: 24px;
+  color: #2c2c2c;
+}
+
+/* 방 생성 영역 */
+.rooms-container .create-room {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.rooms-container #roomTitleInput {
+  flex: 1;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.rooms-container #createRoomBtn {
+  padding: 12px 20px;
+  background-color: #5c67f2;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.rooms-container #createRoomBtn:hover {
+  background-color: #4b55cc;
+}
+
+/* 방 리스트 */
+.rooms-container .room-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.rooms-container .room-list li {
+  display: flex;
+  align-items: center;
+  padding: 20px 24px;
+  background: white;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.rooms-container .room-list li:hover {
+  background-color: #eef1ff;
+}
+
+.rooms-container .room-thumbnail {
+  width: 60px;
+  height: 60px;
+  background-color: #e0e3ff;
+  border-radius: 50%;
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+}
+
+.rooms-container .room-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.rooms-container .room-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.rooms-container .room-sub {
+  font-size: 0.95rem;
+  color: #888;
 }
