@@ -10,9 +10,19 @@ document.addEventListener("DOMContentLoaded", () => {
   //방 렌더링(display)
   const renderRooms = () => {
     roomList.innerHTML = "";
-    rooms.forEach((room, index) => {
+    rooms.forEach((room) => {
       const li = document.createElement("li");
-      li.textContent = `${room.title} (by ${room.creator})`;
+
+      //link room
+      const link = document.createElement("a");
+
+      // link.href =...
+      // ?roomId=${room.id} ?뒤에는 정보를 전달하는 부분
+      // roomId로 ${room.id} 라는 정보를 전달
+      link.href = `room.html?roomId=${room.id}`;
+      link.textContent = `${room.title} (by ${room.creator})`;
+
+      li.appendChild(link);
       roomList.appendChild(li);
     });
   };
