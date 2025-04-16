@@ -1,0 +1,22 @@
+.create-room {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+#createRoomBtn {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.room-list {
+  list-style: none;
+  padding: 0;
+}
+
+.room-list li {
+  background: #f5f5f5;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
