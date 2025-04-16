@@ -344,3 +344,22 @@ footer {
   margin-left: 6px;
   text-decoration: none;
 }
+
+/* password */
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding-right: 14px; /* 눈 아이콘 공간 */
+}
+
+.toggle-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+}

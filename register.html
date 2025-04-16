@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입 | CodeLounge</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="dark-mode">
+    <div class="login-wrapper">
+      <h1>CodeLounge</h1>
+      <div class="login-box">
+        <h2>회원가입</h2>
+        <input type="text" id="registerName" placeholder="이름" />
+
+        <input type="text" id="registerID" placeholder="아이디 (영문/숫자)" />
+
+        <div class="password-wrapper">
+          <input type="password" id="registerPW" placeholder="비밀번호" />
+          <span class="toggle-icon" id="togglePW">👁️</span>
+        </div>
+
+        <input type="password" id="registerPWConfirm" placeholder="비밀번호 확인" />
+
+        <button id="registerBtn">회원가입 완료</button>
+
+        <p class="switch-text">
+          이미 계정이 있으신가요?
+          <a href="login.html" class="switch-link">로그인</a>
+        </p>
+      </div>
+    </div>
+    <script src="register.js"></script>
+  </body>
+</html>
