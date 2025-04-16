@@ -47,4 +47,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //첫 화면 로드시 방 display 출력
   renderRooms();
+  const startBtn = document.querySelector(".btn-start");
+  startBtn.addEventListener("click", () => {
+    const user = localStorage.getItem("loggedInUser");
+    if (user) {
+      window.location.href = "rooms.html";
+    } else {
+      alert("로그인이 필요합니다!");
+      window.location.href = "login.html";
+    }
+  });
 });

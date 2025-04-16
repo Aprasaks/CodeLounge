@@ -9,7 +9,13 @@
   <body class="dark-mode">
     <header class="top-header">
       <div class="logo">CodeLounge</div>
-      <a href="login.html" class="login-btn">로그인</a>
+
+      <!-- 로그인 상태에 따라 바뀌는 영역 -->
+      <div class="user-info">
+        <a href="login.html" class="login-btn" id="loginLink">로그인</a>
+        <span id="userGreeting" class="hidden"></span>
+        <button id="logoutBtn" class="logout-btn hidden">로그아웃</button>
+      </div>
     </header>
 
     <main>
@@ -37,5 +43,6 @@
     <footer>
       <p>&copy; 2025 CodeLounge. All rights reserved.</p>
     </footer>
+    <script src="index.js"></script>
   </body>
 </html>
