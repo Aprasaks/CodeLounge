@@ -19,6 +19,29 @@ if (targetRoom) {
 
 // 코드 input
 document.addEventListener("DOMContentLoaded", () => {
+  //tab button
+  const tabButtons = document.querySelectorAll(".tab-btn");
+  const codeTabs = document.querySelectorAll(".code-tab");
+
+  tabButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const target = btn.dataset.tab;
+
+      //button active
+      tabButtons.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      //input toggle
+      codeTabs.forEach((tab) => {
+        if (tab.classList.contains(`${target}-tab`)) {
+          tab.classList.remove("hidden");
+        } else {
+          tab.classList.add("hidden");
+        }
+      });
+    });
+  });
+
   const htmlInput = document.getElementById("htmlCode");
   const cssInput = document.getElementById("cssCode");
   const jsInput = document.getElementById("jsCode");
@@ -27,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // rendering
   function updatePreview() {
     const html = htmlInput.value;
+
     const css = `<style>${cssInput.value}</style>`;
     const js = `<script>${jsInput.value}<\/script>`;
 
