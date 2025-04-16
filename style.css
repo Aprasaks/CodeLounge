@@ -166,3 +166,89 @@ textarea {
   font-size: 0.95rem;
   color: #888;
 }
+
+/* index css */
+/* 다크 배경 */
+body.dark-mode {
+  background-color: #111;
+  color: #eee;
+  margin: 0;
+  font-family: "Pretendard", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+.hero {
+  text-align: center;
+  padding: 100px 20px 40px;
+}
+
+.hero .logo {
+  color: #5c67f2;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #aaa;
+  margin-bottom: 40px;
+}
+
+.btn-start {
+  display: inline-block;
+  padding: 14px 28px;
+  background-color: #5c67f2;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.btn-start:hover {
+  background-color: #4c54d2;
+}
+
+/* 기능 섹션 */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 80px 60px 20px;
+}
+
+.feature {
+  max-width: 300px;
+  text-align: center;
+}
+
+.feature h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.feature p {
+  font-size: 0.95rem;
+  color: #bbb;
+}
+
+/* 푸터 */
+footer {
+  text-align: center;
+  padding: 40px 0;
+  color: #666;
+  font-size: 0.9rem;
+}
