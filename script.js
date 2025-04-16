@@ -1,26 +1,25 @@
-//load 방 목록 불러오기
 document.addEventListener("DOMContentLoaded", () => {
   const roomList = document.getElementById("roomList");
   const createBtn = document.getElementById("createRoomBtn");
   const titleInput = document.getElementById("roomTitleInput");
 
-  //localstorage에서 가져오기
-  const rooms = JSON.parse(localStorage.getItem("codeRooms")) || [];
-
-  //방 렌더링(display)
+  // ✅ 방 렌더링 함수 (매번 최신 데이터 사용)
   const renderRooms = () => {
     const rooms = JSON.parse(localStorage.getItem("codeRooms")) || [];
-
     roomList.innerHTML = "";
+
+    if (rooms.length === 0) {
+      const emptyMsg = document.createElement("p");
+      emptyMsg.textContent = "생성된 방이 없습니다.";
+      emptyMsg.style.color = "#aaa";
+      emptyMsg.style.padding = "20px";
+      roomList.appendChild(emptyMsg);
+      return;
+    }
+
     rooms.forEach((room) => {
       const li = document.createElement("li");
-
-      //link room
       const link = document.createElement("a");
-
-      // link.href =...
-      // ?roomId=${room.id} ?뒤에는 정보를 전달하는 부분
-      // roomId로 ${room.id} 라는 정보를 전달
       link.href = `room.html?roomId=${room.id}`;
       link.textContent = `${room.title} (by ${room.creator})`;
 
@@ -28,30 +27,34 @@ document.addEventListener("DOMContentLoaded", () => {
       roomList.appendChild(li);
     });
   };
-  //방 생성(create)
+
+  // ✅ 방 생성 버튼 이벤트
   createBtn.addEventListener("click", () => {
     const title = titleInput.value.trim();
-    if (!title) return alert("방 제목을 지어주세요.");
+    if (!title) {
+      alert("방 제목을 지어주세요.");
+      return;
+    }
 
-    const currentUser = localStorage.getItem("loggedInUser");
+    const currentUser = localStorage.getItem("loggedInUser") || "익명";
+
     const newRoom = {
       id: Date.now(),
       title: title,
-      creator: currentUser || "익명",
+      creator: currentUser,
       createdAt: new Date().toLocaleString(),
     };
 
-    // 1. 기존 방 목록 불러오기
+    // 기존 방 목록 다시 불러오기 (최신 기준)
     const storedRooms = JSON.parse(localStorage.getItem("codeRooms")) || [];
-
-    // 2. 새 방 추가
     storedRooms.push(newRoom);
 
-    // 3. localStorage에 저장
+    // 저장하고 렌더링
     localStorage.setItem("codeRooms", JSON.stringify(storedRooms));
-
-    // 4. 화면 다시 렌더링
     renderRooms();
     titleInput.value = "";
   });
+
+  // ✅ 최초 실행 시 방 목록 보여주기
+  renderRooms();
 });
