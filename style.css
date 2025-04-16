@@ -282,3 +282,65 @@ footer {
 .login-btn:hover {
   background-color: #4b55cc;
 }
+
+/* login page */
+
+.login-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 120px;
+  color: white;
+}
+
+.login-box {
+  background-color: #1f1f1f;
+  padding: 40px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.login-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 14px;
+  border: none;
+  border-radius: 8px;
+  background-color: #2a2a2a;
+  color: white;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 14px;
+  background-color: #5c67f2;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.login-box button:hover {
+  background-color: #4b55cc;
+}
+
+.switch-text {
+  text-align: center;
+  margin-top: 16px;
+  color: #ccc;
+}
+
+.switch-link {
+  color: #5c67f2;
+  font-weight: bold;
+  margin-left: 6px;
+  text-decoration: none;
+}
