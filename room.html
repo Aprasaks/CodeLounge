@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,35 +7,42 @@
     <link rel="stylesheet" href="room.css" />
   </head>
   <body>
-    <div class="container">
-      <h1 id="roomTitle">방 제목 불러오는 중...</h1>
-      <p id="roomCreator">생성자:</p>
-      <p id="roomCreatedAt">생성 시간:</p>
-    </div>
-    <div class="tabs">
-      <button class="tab-btn active" data-tab="html">HTML</button>
-      <button class="tab-btn" data-tab="css">CSS</button>
-      <button class="tab-btn" data-tab="js">JavaScript</button>
-    </div>
+    <header class="room-header">
+      <h1 id="roomTitle">방 제목 로딩중...</h1>
+      <p id="roomCreator" class="creator"></p>
+    </header>
 
-    <div class="editor-container">
-      <textarea id="htmlCode" class="code-tab html-tab" placeholder="HTML 입력"></textarea>
-      <textarea id="cssCode" class="code-tab css-tab hidden" placeholder="CSS 입력"></textarea>
-      <textarea id="jsCode" class="code-tab js-tab hidden" placeholder="JS 입력"></textarea>
-    </div>
-    <h3>미리보기</h3>
-    <iframe
-      id="preview"
-      sandbox="allow-scripts"
-      style="width: 100%; height: 300px; border: 1px solid #ccc"
-    ></iframe>
+    <main class="room-main">
+      <!-- 좌측 코드 입력 영역 -->
+      <section class="editor-panel">
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="html">HTML</button>
+          <button class="tab-btn" data-tab="css">CSS</button>
+          <button class="tab-btn" data-tab="js">JavaScript</button>
+        </div>
+        <div class="editor-container">
+          <textarea id="htmlCode" class="code-tab html-tab"></textarea>
+          <textarea id="cssCode" class="code-tab css-tab hidden"></textarea>
+          <textarea id="jsCode" class="code-tab js-tab hidden"></textarea>
+        </div>
+      </section>
 
-    <!-- room out delete button -->
+      <!-- 우측 미리보기 -->
+      <section class="preview-panel">
+        <button class="pv-btn">미리보기</button>
+        <iframe id="preview" sandbox="allow-scripts"></iframe>
+      </section>
+    </main>
+
     <div class="room-controls">
-      <button id="leaveRoomBtn">🔙 방 나가기</button>
-      <button id="deleteRoomBtn" class="hidden">🗑 방 삭제</button>
+      <div class="button-group">
+        <button id="leaveRoomBtn">🔙 방 나가기</button>
+        <button id="deleteRoomBtn" class="hidden">🗑 방 삭제</button>
+      </div>
     </div>
 
     <script src="room.js"></script>
   </body>
+</html>
+
 </html>
