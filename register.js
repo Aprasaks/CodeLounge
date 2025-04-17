@@ -60,19 +60,4 @@ document.getElementById("registerBtn").addEventListener("click", () => {
     alert("비밀번호가 일치하지 않습니다.");
     return;
   }
-
-  const users = JSON.parse(localStorage.getItem("users")) || [];
-
-  const isDuplicate = users.some((user) => user.id === id);
-
-  if (isDuplicate) {
-    alert("이미 존재하는 아이디입니다.");
-    return;
-  }
-
-  users.push({ name, id, pw });
-  localStorage.setItem("users", JSON.stringify(users));
-
-  alert("회원가입이 완료되었습니다!");
-  window.location.href = "login.html";
 });
