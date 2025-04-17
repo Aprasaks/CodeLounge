@@ -1,41 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CodeLounge - Code Rooms</title>
+    <title>CodeLounge - Rooms</title>
     <link rel="stylesheet" href="rooms.css" />
   </head>
   <body>
-    <div class="rooms-container">
-      <div class="logo-box">CodeLounge</div>
-
-      <!-- 방 생성 & 목록 영역 -->
-      <div class="rooms-main">
-        <!-- 왼쪽: 방 생성 영역 -->
-        <div class="create-room-box">
-          <h2>코드방 목록</h2>
-          <input type="text" id="roomTitleInput" placeholder="방 제목을 지어주세요." />
-          <button id="createRoomBtn">방 만들기</button>
-        </div>
-
-        <!-- 오른쪽: 방 리스트 -->
-        <div class="room-list-wrapper">
-          <ul class="room-list" id="roomList"></ul>
-        </div>
+    <!-- 상단 헤더 -->
+    <header class="header">
+      <div class="logo">CodeLounge</div>
+      <div class="user-actions">
+        <span class="username">aprasaks</span>
+        <button id="logoutBtn">로그아웃</button>
+        <button id="toggleCreateBtn">방 만들기</button>
       </div>
-    </div>
+    </header>
 
-    <!-- 스크립트 -->
-    <script src="script.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const user = localStorage.getItem("loggedInUser");
-        if (!user) {
-          alert("로그인이 필요한 페이지입니다.");
-          window.location.href = "login.html";
-        }
-      });
-    </script>
+    <!-- 슬라이드 인풋 영역 -->
+    <section id="createRoomSlide" class="create-room-slide hidden">
+      <input type="text" id="roomTitleInput" placeholder="방 제목을 입력하세요." />
+      <button id="addRoomBtn">추가</button>
+    </section>
+
+    <!-- 코드방 카드 리스트 -->
+    <main class="room-grid-container">
+      <ul id="roomList" class="room-grid"></ul>
+    </main>
+
+    <script src="rooms.js"></script>
   </body>
 </html>
