@@ -23,3 +23,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+const participantsBtn = document.getElementById("participantsToggleBtn");
+const participantsBox = document.getElementById("participantsBox");
+
+participantsBtn.addEventListener("click", () => {
+  participantsBox.classList.toggle("hidden");
+});

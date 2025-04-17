@@ -240,5 +240,37 @@ body {
   position: fixed;
   top: 20px;
   right: 20px;
+  display: flex;
+  gap: 12px;
   z-index: 999;
+}
+
+/* 참여자 드롭다운 */
+.participants-box {
+  position: fixed;
+  top: 60px; /* 버튼 아래로 */
+  right: 132px; /* 채팅 버튼보다 왼쪽 */
+  background-color: rgba(30, 30, 30, 0.9);
+  backdrop-filter: blur(8px);
+  color: white;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  z-index: 9999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.2s ease;
+}
+
+.participants-box ul {
+  padding: 0;
+  margin: 8px 0 0;
+  list-style: none;
+}
+
+.participants-box li {
+  margin-bottom: 4px;
+}
+
+.participants-box.hidden {
+  display: none;
 }
