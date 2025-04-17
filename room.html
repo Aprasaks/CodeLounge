@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="room.css" />
   </head>
   <body>
+    <!-- ✅ 채팅하기 버튼 -->
+    <div class="top-bar">
+      <button id="chatToggleBtn">💬 채팅하기</button>
+    </div>
+
     <header class="room-header">
       <h1 id="roomTitle">방 제목 로딩중...</h1>
       <p id="roomCreator" class="creator"></p>
@@ -41,8 +46,14 @@
       </div>
     </div>
 
-    <script src="room.js"></script>
-  </body>
-</html>
+    <!-- ✅ 채팅 사이드바 -->
+    <div id="chatSidebar" class="chat-sidebar">
+      <div class="chat-header">채팅하기</div>
+      <div class="chat-messages" id="chatMessages"></div>
+      <input type="text" id="chatInput" placeholder="메시지를 입력하세요" />
+    </div>
 
+    <script src="room.js"></script>
+    <script src="chat.js"></script>
+  </body>
 </html>

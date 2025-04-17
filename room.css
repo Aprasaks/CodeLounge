@@ -164,3 +164,81 @@ body {
   background-color: #e74c3c;
   color: #fff;
 }
+
+/* 채팅 사이드바 */
+.chat-sidebar {
+  position: fixed;
+  bottom: 0;
+  right: 20px;
+  width: 300px;
+  height: 300px;
+  background-color: rgba(20, 20, 20, 0.8);
+  backdrop-filter: blur(10px);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  padding: 12px;
+  z-index: 9999;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+}
+
+.chat-sidebar.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.chat-header {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+#chatInput {
+  padding: 8px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background-color: transparent;
+  color: white;
+  font-size: 0.9rem;
+}
+
+/* 오른쪽 상단에 고정되는 버튼 */
+.chat-toggle-wrapper {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+#toggleChatBtn {
+  background-color: #4b55f2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.top-bar {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+}
